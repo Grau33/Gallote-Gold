@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="login">
+        <h1>Banco Digital</h1>
+        <input type="text" id="username" placeholder="Nome de usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p>Não tem uma conta? <a href="#" onclick="showRegister()">Cadastre-se</a></p>
+    </div>
+
+    <div class="container" id="register" style="display: none;">
+        <h1>Criar Conta</h1>
+        <input type="text" id="newUsername" placeholder="Nome de usuário">
+        <input type="password" id="newPassword" placeholder="Senha">
+        <input type="number" id="initialBalance" placeholder="Saldo inicial">
+        <button onclick="register()">Cadastrar</button>
+        <p>Já tem uma conta? <a href="#" onclick="showLogin()">Entrar</a></p>
+    </div>
+
+    <div class="container" id="dashboard" style="display: none;">
+        <h2 id="welcome"></h2>
+        <p>Saldo atual: <span id="saldo">0</span></p>
+        <button onclick="togglePix()">Transferir Pix</button>
+        <button onclick="toggleHistory()">Ver Extrato</button>
+        <button onclick="logout()">Sair</button>
+    </div>
+
+    <div class="container" id="pixTransfer" style="display: none;">
+        <h2>Transferência Pix</h2>
+        <input type="number" id="pixAmount" placeholder="Valor da transferência">
+        <button onclick="transferirPix()">Confirmar</button>
+        <button onclick="togglePix()">Cancelar</button>
+    </div>
+
+    <div class="container" id="history" style="display: none;">
+        <h2>Histórico de Transações</h2>
+        <ul id="transactionList"></ul>
+        <button onclick="toggleHistory()">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
